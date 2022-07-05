@@ -11,9 +11,9 @@ PASSWORD = ''
 # 经纬度
 LOCATION = ''
 # 位置
-COORD = '中国-湖南省-长沙市-望城区'
+COORD = ''
 # 邮件开关
-IS_EMAIL = 'Y'
+IS_EMAIL = ''
 # 接收消息邮箱账号
 EMAIL = ''
 # 配置文件
