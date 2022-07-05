@@ -41,21 +41,21 @@ def is_open():
         print("请在浏览器里打开链接获取经纬度：https://api.xiaobaibk.com/api/map/")
 
 def is_email():
-    print("开启邮件通知后可以收到打卡成功和失败通知，如果要开启的话是需要配置的，选择权在你^_^")
-    reply = input("是否需要开启邮件通知[Y/N]:")
+    print("开启通知后可以收到打卡成功和失败通知，如果要开启的话是需要配置的，看看文档去吧send_mail函数里面的*换成你的")
+    reply = input("是否需要开启微信Server酱通知[Y/N]:")
     if reply == 'N' or reply != "Y":
         return {}
     else:
-        email = str(input("请输入要接收消息的邮箱账号："))
+        email = "1"
         return {'email': email}
 
 path = os.getcwd() + '\\' + CONF
 if not os.path.exists(path):
-    # USERNAME = str(input("请输入小北学生账号："))
-    # PASSWORD = str(input("请输入小北学生密码："))
-    # is_open()
-    # LOCATION = str(input("请将您所复制的经纬度粘贴到此处："))
-    # COORD = str(input("请将您所在的区域【如：中国-云南省-昆明市-官渡区】："))
+    USERNAME = str(input("请输入小北学生账号："))
+    PASSWORD = str(input("请输入小北学生密码："))
+    is_open()
+    LOCATION = str(input("请将您所复制的经纬度粘贴到此处："))
+    COORD = str(input("请将您所在的区域【如：中国-云南省-昆明市-官渡区】："))
     rep = is_email()
     if len(rep) == 0:
         IS_EMAIL = 0
@@ -123,7 +123,7 @@ def get_param():
     }
 
 def send_mail(context):
-    url = "https://sctapi.ftqq.com/SCT159120TbWKSrIW4kF8qkUfuul9JJsMO.send"
+    url = "https://sctapi.ftqq.com/***********************.send"   #要用的话把*改成你的
     js = {'title': context, 'info': context,"desp":context}
     # {"code":200,"msg":"\u606d\u559c\u60a8\u53d1\u9001\u6210\u529f\u4e86"}
     result = requests.post(url, js).text
